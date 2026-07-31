@@ -1,0 +1,7 @@
+{
+  "output_video": "outputs/variant-0.mp4",
+  "input_video": "inputs/private_so101_demo.mp4",
+  "controls": {
+    "edge": null
+  }
+}
