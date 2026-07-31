@@ -1,0 +1,1 @@
+A fixed camera observes a white SO-101 follower robotic arm and a black SO-101 leader robotic arm operating on an indoor tabletop under warm evening indoor lighting. Preserve both robots, their geometry, joint motion, timing, camera position, tabletop, and physical interactions.
