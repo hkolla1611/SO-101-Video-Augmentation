@@ -1,0 +1,25 @@
+# Secrets
+.env
+*.key
+*.pem
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Hugging Face / Models
+hf-cache/
+checkpoints/
+models/
+
+# Datasets
+datasets/
+data/raw/
+
+# Generated outputs
+outputs/
+
+# OS / IDE
+.DS_Store
+.vscode/
