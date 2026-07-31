@@ -1,0 +1,53 @@
+data:
+  - inputs:
+      rgb: inputs/private_so101_demo.mp4
+      controls:
+        edge: null
+
+    output:
+      video: outputs/variant-0.mp4
+      caption: prompts/variant-0-prompt.txt
+      metadata: metadata/variant-0-metadata.json
+
+captioning:
+  llm:
+    text: >-
+      A fixed camera observes a white SO-101 follower robotic arm and a black
+      SO-101 leader robotic arm operating on an indoor tabletop under warm
+      evening indoor lighting. Preserve both robots, their geometry, joint
+      motion, timing, camera position, tabletop, and physical interactions.
+
+augmentation:
+  model:
+    name: cosmos-transfer2.5
+    version: ct2.5
+    executor_type: local
+
+  parameters:
+    sigma: 90
+    seed: 42001
+    guidance: 3
+    num_steps: 35
+    inference_name: movement_check_variant_0
+
+  local_parameters:
+    num_processes: 1
+    master_port: 12341
+
+  modalities:
+    edge: 1.0
+
+    positive_prompt: >-
+      warm evening indoor lighting, warm color temperature, soft
+      natural-looking indoor illumination, realistic shadows
+
+    negative_prompt: >-
+      industrial assembly cell, factory, warehouse, scene redesign,
+      altered robot geometry, altered joint motion, changed timing,
+      changed camera position, changed tabletop, changed physical
+      interactions, duplicated robots, missing robots, flicker,
+      temporal inconsistency
+
+pipeline:
+  retry: 0
+  regenerate_caption_on_retry: false
